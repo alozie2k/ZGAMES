@@ -1,0 +1,34 @@
+#player,#layer1,#layer2,#layer3,#layer4,#layer5,
+#player2,#player3,#player4,#player5,#jelly,#fly,#roll,#fire,#sonichit,#sonicdeath,#boom,#head,#fireani
+
+
+{
+  display:none;
+}
+@media only screen and (max-width: 920px) {
+  #canvas1{
+		width:150px;
+		height:204px;
+		bottom : -10rem;
+		left: 36%;
+		z-index:5;
+	}
+
+  .navbar {
+    left:5rem;
+    top:7rem;
+    font-size:4px;
+  }
+  #games{
+	
+		top:12rem;
+		left:6rem;
+		font-size: .5rem;
+		z-index:5;
+		
+	 }
+  .navbar{
+    
+   left: 2rem;
+  }
+}

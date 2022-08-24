@@ -1,0 +1,210 @@
+
+
+
+
+
+#container{
+position:relative;
+/*give it a relative postion to help keep the health bar within the canvas*/
+
+/*
+
+display: inline-block;
+
+the div by default takes the full width of the browser window beacuse a div by defult has a display of block element 
+which takes up 100% of the parent div(which is usally the body which takes 100% of the screens width)
+this is why you use display inlineblock which means the element can still stack up each other on other elements but its only going to take up the full width of
+whatever children are inside of it
+
+the child/the div that contain the healthbar has a postion of absolute
+it doesnt affect the width or height of the parent div
+but the canvas element has a display of block so canvas does affect the width and height of the parent element 
+as a result when we put a display of inline block on this parent element 
+its saying that it should only be the full width and height of the canvas element
+
+*/
+}
+#scontain{
+    position:absolute;
+    /*we give an absoulte postion so the canvas  and the other canvas elements isnt affected by the width or heoght of this div or object as we taken it out of the document flow
+   in other word this element with the postion of absolute should be relative to that main container div
+   with the position of relative
+    */
+top:16rem;
+left: 18rem;
+z-index: 6;
+display: flex;
+/* Give the parent div a display flex so all the child elements inside that div display right next to each other*/
+width: 54%;
+/*so the div takes up the whole width of the canvas and gives the healthbar more space to expand
+*/
+
+
+ align-items:center;
+ /*this style only works if the element has a display flex
+ you this because you want to take all the elements in this div and align to the center of the div
+ */
+ padding: 20px;
+ /*
+
+
+
+ meaing your putting 20px of padding on every side of this container/div
+ */
+
+}
+
+
+#timer{
+background-color:black;
+width:100px;
+height:50px;
+flex-shrink:0;
+/*using flex:shrink  and setting it to zero to the element you dont want to shrink so that element doesnt shrink due to the size of the 
+other elements in the flexbox
+*/
+display: flex;
+align-items: center;
+justify-content: center;
+/*this is to center the time
+align-items centers things on the y-axis or vertically/up-down
+justify-content cneters things on the x-axis or horitzontally/left-right
+*/
+color:white;
+border:4px solid white ;
+    
+}
+
+#healthbar{
+    position: relative;
+    /*since we gave coverage absoulte postion want to wrap health and coverage into one parent div
+    parent div will be responsible for our layout and pushing elements around
+    */
+    /*height:30px;
+    didnt need height anymore since the parent div is always going to be as big as 
+    the child element inside of it and the child element already had a height of 30pxs assigned to it 
+    */
+    width:100%;
+    display:flex;
+    justify-content:flex-end ;
+    
+    /*
+    want all the children elements to go to the very end of this container
+    */
+    border-left:4px solid white ;
+    border-top:4px solid white ;
+    border-bottom:4px solid white ;
+ 
+}
+
+    #health{
+        background-color:red;
+        height:30px;
+        width:100%;
+        /*add 100% so the div/yellow bar is now visible 
+        wasnt visible after we gave the parentdiv(healthbar a display flex)
+        */
+    
+    }
+
+
+    #coverage1{
+        position:absolute;
+       background-color :rgb(88, 88, 156);
+       top:0;
+       right:0;
+       bottom:0;
+       width:100%;
+    /*
+    sets the postions so this div is on top of the enemies health bar
+    postions -are how far from the parent div should thi rectangle be placed
+
+    take away left and add width 100% to align the blue health bar to the right with the help of flex and felx-end in the parent div so the halthbar decreases from left to right
+    
+    */
+    }
+
+#healthbar2{
+    position: relative;
+    /*since we gave coverage absoulte postion want to wrap health and coverage into one parent div
+    parent div will be responsible for our layout and pushing elements around
+    */
+
+    width:100%;
+    border-top:4px solid white ;
+    border-bottom:4px solid white ;
+    border-right:4px solid white ;
+    }
+
+
+#health1{
+    background-color:red;
+ height:30px;
+    /*
+    
+    
+    when you give both healthbars 100% width one of the healthbars/elements will shrink to accomodate the other element 
+    when dont what the element in the flexbox to shrink because if
+
+    we gave this health bar a width of 100% when we added the width of 100% to its parent value healthbar2 so we just needed to add height to this 
+    element to make it visible 
+
+    doing all this allow to affect or decrease the length of the health or this div without affect the length or location of any other element
+    
+    */
+}
+
+#coverage{
+    position:absolute;
+    background-color :rgb(88, 88, 156);
+   top:0;
+   left:0;
+   right:0;
+   bottom:0;
+/*
+sets the postions so this div is on top of the enemies health bar
+postions -are how far from the parent div should thi rectangle be placed
+*/
+}
+
+
+#displayText{
+position:absolute;
+
+/*use postion absoulte to try and get this div on top the canvas
+*/
+color:white;
+align-items: center;
+justify-content:center;
+top:150px;
+right:0px;
+bottom:0;
+left:-200px;
+font-size:1.5rem;
+/*
+What sure the div takes up the full width and height of the canvas and not just the width and height of thw word tie so it actually center in the middle of the canvas
+he top left bottom and right properties to expand the full width and height of the divto do this you use t
+*/
+display:none;
+/*changes to display flex after meeting winner tie or loser  requirments to become visble */
+z-index:7;
+}
+
+@media only screen and (max-width: 920px) {
+    #canvas1{
+		width:350px;
+        left: 49%;
+    }
+    #scontain{
+        top: 15rem;
+left: 6rem;
+width: 18rem;
+
+	}
+    #displayText{
+        font-size: 1rem;
+        top: 22rem;
+        left: -2rem;
+    }
+}
+
